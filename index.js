@@ -17,27 +17,27 @@ app.get('/pokemon/:name', async (req, res) => {
     }
 });
 
-//  POST untuk menambahkan data Pokémon (simulasi, tidak benar-benar menyimpan ke database)
+//  POST untuk menambahkan data Pokémon 
 app.post('/pokemon', (req, res) => {
     const newPokemon = req.body;
     res.status(201).json({ message: 'insert pokemon', pokemon: newPokemon });
 });
 
-//  PUT untuk mengupdate data Pokémon (simulasi)
+//  PUT untuk mengupdate data Pokémon
 app.put('/pokemon/:name', (req, res) => {
     const name = req.params.name;
     const updatedPokemon = req.body;
     res.json({ message: 'ini operasi put', name, updatedPokemon });
 });
 
-// PATCH untuk melakukan partial update data Pokémon (simulasi)
+// PATCH untuk melakukan partial update data Pokémon 
 app.patch('/pokemon/:name', (req, res) => {
     const name = req.params.name;
     const updates = req.body;
     res.json({ message: 'ini operasi put patch', name, updates });
 });
 
-// DELETE untuk menghapus data Pokémon (simulasi)
+// DELETE untuk menghapus data Pokémon 
 app.delete('/pokemon/:name', (req, res) => {
     const name = req.params.name;
     res.json({ message: 'ini operasi delete', name });
